@@ -1,0 +1,12 @@
+<html>
+<head>
+<title></title>
+<script src=“http://code.jquery.com/jquery-1.5.js“></script>
+<script src=“ajax.js“></script>
+</head>
+<body>
+
+ 	
+<input onclick="ajax(2)" type="button" value="Pulsa aquí" />
+</body>
+</html>

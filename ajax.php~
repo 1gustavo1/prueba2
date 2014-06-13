@@ -1,0 +1,12 @@
+<?php
+$x = $_POST['variable1'];
+$y = $_POST['variable2'];
+ 
+
+ 
+// Array con las respuestas
+$respuesta['b'] = $x;
+$respuesta['a'] = $x+4;
+
+echo json_encode($respuesta);
+?>

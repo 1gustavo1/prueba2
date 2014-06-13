@@ -1,0 +1,40 @@
+<?/*
+require ('./lib/Stripe.php');
+Stripe::setApiKey("sk_test_tdoRr90BaGqF16bEwo5OIS5C");
+
+
+echo "lectura<br>";
+$id=array();
+$i=0;
+$file = fopen("datos.txt", "r");
+while(!feof($file)) {
+$id[]=fgets($file);
+$i++;
+}
+fclose($file);
+$i=$i-1;
+$token=$id[0];
+
+
+try {
+$customer = Stripe_Customer::create(array(
+  "card" => $token,
+  "plan" => "gold",
+  "email" => "payinguser@example.com")
+);
+
+
+} catch(Stripe_CardError $e) {
+  // The card has been declined
+echo "Error";
+}
+*/
+require_once('./lib/Stripe.php'); 
+Stripe::setApiKey("sk_test_tdoRr90BaGqF16bEwo5OIS5C");
+Stripe_Customer::create(array( "description" => "Customer for test@example.com", "card" => "tok_104DFl4SnQ3elsublR8P4klO" ));
+// obtained with Stripe.js ));
+
+
+
+
+?>

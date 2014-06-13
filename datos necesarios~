@@ -1,0 +1,38 @@
+apikey
+
+pk_test_H4KmcpKLT5xPQG1Ze3D8Z58V
+
+////////////////////////////////
+
+try
+    {
+        // create the charge on Stripe's servers. THIS WILL CHARGE THE CARD!
+        $charge = Stripe_Charge::create(array(
+            "amount" => $priceInCents,
+            "currency" => "usd",
+            "card" => $token,
+            "description" => $email)
+        );
+ 
+        // If no exception was thrown, the charge was successful!
+        // Here, you might record the user's info in a database, email a receipt, etc.
+ 
+        // Return a result code of '0' and whatever other information you'd like.
+        // This is accessible to the jQuery Ajax call return-handler in "buy-controller.js"
+        $array = array('result' => 0, 'email' => $email, 'price' => $price, 'message' => 'Thank you; your transaction was successful!');
+        echo json_encode($array);
+    }
+    catch (Stripe_Error $e)
+
+/////////////////////////////////////////////////////////////////////////
+https://dashboard.stripe.com/test/transfers/overview
+http://www.larryullman.com/2012/12/05/writing-the-javascript-code-for-handling-stripe-payments/
+https://stripe.com/docs/testing#cards
+http://www.desarrolloweb.com/articulos/jquery4php.html
+http://www.imaginanet.com/blog/usando-ajax-un-simple-ejemplo-con-php-y-jquery.html
+http://code.tutsplus.com/tutorials/so-you-want-to-accept-credit-cards-online--net-25457
+http://www.calbertts.com/blog/articulo/uso-de-ajax-con-jquery-php-json
+http://www.maestrosdelweb.com/editorial/javascript-facil-y-rapido-con-jquery/
+https://stripe.com/docs/tutorials/charges
+
+

@@ -1,0 +1,33 @@
+<?
+
+require ('./lib/Stripe.php');
+Stripe::setApiKey("sk_test_tdoRr90BaGqF16bEwo5OIS5C");
+/*
+$token = $_POST['stripeToken'];
+echo $token;
+try {
+$charge = Stripe_Charge::create(array(
+  "amount" => 1000, // amount in cents, again
+  "currency" => "usd",
+  "card" => $token,
+  "description" => "payinguser@example.com")
+);
+} catch(Stripe_CardError $e) {
+  // The card has been declined
+echo "asas";
+}
+*/
+//crear un plan
+Stripe_Plan::create(array(
+  "amount" => 2000,
+  "interval" => "month",
+  "name" => "Amazing Gold Plan",
+  "currency" => "usd",
+  "id" => "gold")
+);
+
+
+
+?>
+
+

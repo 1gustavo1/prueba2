@@ -1,0 +1,18 @@
+<?php
+// Helper Function: used to post an error message back to our caller
+function returnErrorWithMessage($message)
+{
+    $a = array('result' => 1, 'errorMessage' => $message);
+    echo json_encode($a);
+}
+ 
+// Credit Card Billing
+require_once('Stripe.php');  // change this path to wherever you put the Stripe PHP library!
+ 
+$trialAPIKey = "oRU5rYklVzp94Ab0RbBTP0soVdlaEtvm";  // These are the SECRET keys!
+$liveAPIKey = "4BYrmtvwLb8iiiq9KIdbnRh5KCeSfPsX";
+ 
+Stripe::setApiKey($trialAPIKey);  // Switch to change between live and test environments
+ 
+// Get all the values from the form
+$token = $_POST['stripeToken'];
